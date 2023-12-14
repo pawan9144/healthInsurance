@@ -1,0 +1,280 @@
+{
+  "info": {
+    "_postman_id": "f5180bbb-2d68-44e6-b5ca-6362dba62545",
+    "name": "HEALTHAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SaveDetails",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CriticalIllness\": true,\r\n    \"IsExisitingIllness\": true,\r\n    \"IsSurgicalProcdure\": false,\r\n    \"RoomRentWaiver\": true,\r\n    \"InsuredRequests\": [\r\n        {\r\n            \"DateOfBirth\": \"2023-07-01\",\r\n            \"PreExistingDisease\": true,\r\n            \"RelationToInsured\": 1,\r\n            \"SumInsured\": 500000,\r\n            \"PinCode\": 545454,\r\n            \"Age\": 0,\r\n            \"Gender\": 1,\r\n            \"MaritalStatus\": 1\r\n        },\r\n        {\r\n            \"DateOfBirth\": \"2023-07-07\",\r\n            \"PreExistingDisease\": true,\r\n            \"RelationToInsured\": 2,\r\n            \"SumInsured\": 500000,\r\n            \"PinCode\": 545454,\r\n            \"Age\": 0,\r\n            \"Gender\": 2,\r\n            \"MaritalStatus\": 1\r\n        }\r\n    ],\r\n    \"PromoCode\": \"\",\r\n    \"EnquiryNo\": \"\",\r\n    \"BusinessType\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/PreQuote/SaveDetails",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "PreQuote", "SaveDetails"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "FetchQuotes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/FetchQuotes?EnquiryNo=202307071930255006907",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "FetchQuotes"],
+          "query": [
+            {
+              "key": "EnquiryNo",
+              "value": "202307071930255006907"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetComparisionData",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Enquiryno\":\"202307071349348217567\",\r\n    \"PlanIDs\":[\r\n        {\r\n            \"CompanyID\":\"1\",\r\n            \"PlanID\":\"1\"\r\n        },\r\n        {\r\n            \"CompanyID\":\"2\",\r\n            \"PlanID\":\"9\"\r\n        },\r\n        {\r\n            \"CompanyID\":\"3\",\r\n            \"PlanID\":\"15\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/GetComparisionData",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "GetComparisionData"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetFeatureData",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/GetFeatureData?Enquiryno=202307071930255006907&PlanID=1",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "GetFeatureData"],
+          "query": [
+            {
+              "key": "Enquiryno",
+              "value": "202307071930255006907"
+            },
+            {
+              "key": "PlanID",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetFareDetaildata",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/GetFareDetaildata?Enquiryno=202307071930255006907&PlanID=1",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "GetFareDetaildata"],
+          "query": [
+            {
+              "key": "Enquiryno",
+              "value": "202307071930255006907"
+            },
+            {
+              "key": "PlanID",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetCashLessList",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/GetCashLessList?Enquiryno=98127398127398797&CompanyID=1&Pincode=110015",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "GetCashLessList"],
+          "query": [
+            {
+              "key": "Enquiryno",
+              "value": "98127398127398797"
+            },
+            {
+              "key": "CompanyID",
+              "value": "1"
+            },
+            {
+              "key": "Pincode",
+              "value": "110015"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetNextPageData",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/GetNextPageData?Enquiryno=202307141312587267228&CompanyID=5&PlanID=44",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "GetNextPageData"],
+          "query": [
+            {
+              "key": "Enquiryno",
+              "value": "202307141312587267228"
+            },
+            {
+              "key": "CompanyID",
+              "value": "5"
+            },
+            {
+              "key": "PlanID",
+              "value": "44"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetQuestionList",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/GetQuestionList?Enquiryno=202307141312587267228&CompanyID=121",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "GetQuestionList"],
+          "query": [
+            {
+              "key": "Enquiryno",
+              "value": "202307141312587267228"
+            },
+            {
+              "key": "CompanyID",
+              "value": "121"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SaveProposal",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Enquiryno\": \"202307141312587267228\",\r\n    \"CompanyID\": \"21\",\r\n    \"PlanID\": \"1\",\r\n    \"PolicyPeriod\": \"1\",\r\n    \"addonsSelecteds\": [\r\n        {\r\n            \"AddonID\": 1\r\n        },\r\n        {\r\n            \"AddonID\": 2\r\n        }\r\n    ],\r\n    \"discountApplieds\": [\r\n        {\r\n            \"DiscountID\": 5\r\n        },\r\n        {\r\n            \"DiscountID\": 6\r\n        }\r\n    ],\r\n    \"otherPlansSelecteds\": [\r\n        {\r\n            \"OthersPlanID\": 8\r\n        },\r\n        {\r\n            \"OthersPlanID\": 9\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/SaveProposal",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "SaveProposal"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreatePolicy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ApiEnquiryNo\": \"sample string 1\",\r\n  \"SumInsured\": 2,\r\n  \"PaymentType\": \"sample string 3\",\r\n  \"ClientType\": \"sample string 4\",\r\n  \"CriticalIllness\": true,\r\n  \"RoomRentWaiver\": true,\r\n  \"EmergencyContactName\": \"sample string 7\",\r\n  \"EmergencyContactMobile\": \"sample string 8\",\r\n  \"Persons\": [\r\n    {\r\n      \"Title\": \"sample string 1\",\r\n      \"FirstName\": \"sample string 2\",\r\n      \"LastName\": \"sample string 3\",\r\n      \"EmailAddress\": \"sample string 4\",\r\n      \"MobileNo\": \"sample string 5\",\r\n      \"RelationShip\": 1,\r\n      \"DateOfBirth\": \"2023-07-12T12:23:14.7329049+05:30\",\r\n      \"Height\": 1,\r\n      \"Weight\": 1,\r\n      \"Gender\": 1,\r\n      \"Profession\": \"sample string 7\",\r\n      \"Address\": {\r\n        \"AddressLine1\": \"sample string 1\",\r\n        \"AddressLine2\": \"sample string 2\",\r\n        \"City\": \"sample string 3\",\r\n        \"State\": \"sample string 4\",\r\n        \"PostalCode\": \"sample string 5\",\r\n        \"Country\": \"sample string 6\",\r\n        \"CityID\": \"sample string 7\",\r\n        \"DistrictID\": \"sample string 8\",\r\n        \"AreaID\": \"sample string 9\",\r\n        \"StateID\": \"sample string 10\"\r\n      },\r\n      \"CommunicationAddress\": {\r\n        \"AddressLine1\": \"sample string 1\",\r\n        \"AddressLine2\": \"sample string 2\",\r\n        \"City\": \"sample string 3\",\r\n        \"State\": \"sample string 4\",\r\n        \"PostalCode\": \"sample string 5\",\r\n        \"Country\": \"sample string 6\",\r\n        \"CityID\": \"sample string 7\",\r\n        \"DistrictID\": \"sample string 8\",\r\n        \"AreaID\": \"sample string 9\",\r\n        \"StateID\": \"sample string 10\"\r\n      },\r\n      \"MaritalStatus\": 1,\r\n      \"Question\": [\r\n        {\r\n          \"QuestionCode\": \"sample string 1\",\r\n          \"QuestionText\": \"sample string 2\",\r\n          \"AnswerCode\": \"sample string 3\",\r\n          \"AnswerText\": \"sample string 4\",\r\n          \"SubQuestion\": [\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            },\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"QuestionCode\": \"sample string 1\",\r\n          \"QuestionText\": \"sample string 2\",\r\n          \"AnswerCode\": \"sample string 3\",\r\n          \"AnswerText\": \"sample string 4\",\r\n          \"SubQuestion\": [\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            },\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"Occupation\": \"sample string 8\",\r\n      \"PreExistingDisease\": [\r\n        \"sample string 1\",\r\n        \"sample string 2\"\r\n      ]\r\n    },\r\n    {\r\n      \"Title\": \"sample string 1\",\r\n      \"FirstName\": \"sample string 2\",\r\n      \"LastName\": \"sample string 3\",\r\n      \"EmailAddress\": \"sample string 4\",\r\n      \"MobileNo\": \"sample string 5\",\r\n      \"RelationShip\": 1,\r\n      \"DateOfBirth\": \"2023-07-12T12:23:14.7329049+05:30\",\r\n      \"Height\": 1,\r\n      \"Weight\": 1,\r\n      \"Gender\": 1,\r\n      \"Profession\": \"sample string 7\",\r\n      \"Address\": {\r\n        \"AddressLine1\": \"sample string 1\",\r\n        \"AddressLine2\": \"sample string 2\",\r\n        \"City\": \"sample string 3\",\r\n        \"State\": \"sample string 4\",\r\n        \"PostalCode\": \"sample string 5\",\r\n        \"Country\": \"sample string 6\",\r\n        \"CityID\": \"sample string 7\",\r\n        \"DistrictID\": \"sample string 8\",\r\n        \"AreaID\": \"sample string 9\",\r\n        \"StateID\": \"sample string 10\"\r\n      },\r\n      \"CommunicationAddress\": {\r\n        \"AddressLine1\": \"sample string 1\",\r\n        \"AddressLine2\": \"sample string 2\",\r\n        \"City\": \"sample string 3\",\r\n        \"State\": \"sample string 4\",\r\n        \"PostalCode\": \"sample string 5\",\r\n        \"Country\": \"sample string 6\",\r\n        \"CityID\": \"sample string 7\",\r\n        \"DistrictID\": \"sample string 8\",\r\n        \"AreaID\": \"sample string 9\",\r\n        \"StateID\": \"sample string 10\"\r\n      },\r\n      \"MaritalStatus\": 1,\r\n      \"Question\": [\r\n        {\r\n          \"QuestionCode\": \"sample string 1\",\r\n          \"QuestionText\": \"sample string 2\",\r\n          \"AnswerCode\": \"sample string 3\",\r\n          \"AnswerText\": \"sample string 4\",\r\n          \"SubQuestion\": [\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            },\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"QuestionCode\": \"sample string 1\",\r\n          \"QuestionText\": \"sample string 2\",\r\n          \"AnswerCode\": \"sample string 3\",\r\n          \"AnswerText\": \"sample string 4\",\r\n          \"SubQuestion\": [\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            },\r\n            {\r\n              \"QuestionCode\": \"sample string 1\",\r\n              \"QuestionText\": \"sample string 2\",\r\n              \"AnswerCode\": \"sample string 3\",\r\n              \"AnswerText\": \"sample string 4\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"Occupation\": \"sample string 8\",\r\n      \"PreExistingDisease\": [\r\n        \"sample string 1\",\r\n        \"sample string 2\"\r\n      ]\r\n    }\r\n  ],\r\n  \"Nominee\": {\r\n    \"FirstName\": \"sample string 1\",\r\n    \"LastName\": \"sample string 2\",\r\n    \"RelationShip\": 1,\r\n    \"Percentage\": 3,\r\n    \"AddressLine1\": \"sample string 4\",\r\n    \"AddressLine2\": \"sample string 5\",\r\n    \"PostalCode\": \"sample string 6\",\r\n    \"DocumentType\": \"sample string 7\",\r\n    \"DocumentNumber\": \"sample string 8\",\r\n    \"DateOfBirth\": \"2023-07-12T12:23:14.7399064+05:30\",\r\n    \"Gender\": 1,\r\n    \"Country\": \"sample string 10\",\r\n    \"CityID\": \"sample string 11\",\r\n    \"DistrictID\": \"sample string 12\",\r\n    \"AreaID\": \"sample string 13\",\r\n    \"StateID\": \"sample string 14\"\r\n  },\r\n  \"KYCDetails\": [\r\n    {\r\n      \"TypeId\": \"sample string 1\",\r\n      \"NameId\": \"sample string 2\",\r\n      \"NumberId\": \"sample string 3\",\r\n      \"FileName\": \"sample string 4\",\r\n      \"FileExtension\": \"sample string 5\",\r\n      \"FileBase64\": \"sample string 6\"\r\n    },\r\n    {\r\n      \"TypeId\": \"sample string 1\",\r\n      \"NameId\": \"sample string 2\",\r\n      \"NumberId\": \"sample string 3\",\r\n      \"FileName\": \"sample string 4\",\r\n      \"FileExtension\": \"sample string 5\",\r\n      \"FileBase64\": \"sample string 6\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Policy/CreatePolicy",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Policy", "CreatePolicy"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetProposalDetails",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://61.246.34.128:30030/api/Quote/GetProposalDetails?Enquiryno=202307141312587267228",
+          "protocol": "http",
+          "host": ["61", "246", "34", "128"],
+          "port": "30030",
+          "path": ["api", "Quote", "GetProposalDetails"],
+          "query": [
+            {
+              "key": "Enquiryno",
+              "value": "202307141312587267228"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
